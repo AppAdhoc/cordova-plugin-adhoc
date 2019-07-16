@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-adhoc",
+  "version": "0.0.1",
+  "description": "吆喝科技官方支持的 PhoneGap/Cordova 插件（Android &amp; iOS）。",
+  "cordova": {
+    "id": "cordova-plugin-adhoc",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AppAdhoc/cordova-plugin-adhoc.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AppAdhoc/cordova-plugin-adhoc/issues"
+  },
+  "homepage": "https://github.com/AppAdhoc/cordova-plugin-adhoc#readme"
+}
