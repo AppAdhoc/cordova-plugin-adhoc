@@ -24,11 +24,11 @@
     
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
-            <feature name="AdhocSDK"><param name="android-package" value="cordova-plugin-adhoc.Adhoc" />
+            <feature name="AdhocSDK"><param name="android-package" value="com.appadhoc.plugin.AdhocCordovaPlugin" />
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
         </config-file>
-        <source-file src="src/android/Adhoc.java" target-dir="src/cordova-plugin-adhoc" />
+        <source-file src="src/android/AdhocCordovaPlugin.java" target-dir="src/com.appadhoc.plugin" />
     </platform>
 </plugin>
