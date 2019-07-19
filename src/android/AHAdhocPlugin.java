@@ -1,5 +1,6 @@
 package com.appadhoc.plugin;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.adhoc.adhocsdk.AdhocTracker;
@@ -59,12 +60,12 @@ public class AHAdhocPlugin extends CordovaPlugin {
 
     private void track(JSONArray args, CallbackContext cac) {
         String oneArg = args.optString(0);
-        String twoArg = args.optString(1);
-        if (oneArg == null || oneArg.equals("") || twoArg == null || twoArg.equals("")) {
+        int twoArg = args.optInt(1);
+        if (TextUtils.isEmpty(oneArg)) {
             cac.error("Expected one non-empty string argument.");
             return;
         }
-        AdhocTracker.track(oneArg, 1);
+        AdhocTracker.track(oneArg, twoArg);
         cac.success();
     }
 
@@ -73,7 +74,7 @@ public class AHAdhocPlugin extends CordovaPlugin {
     }
 
     private void getCurrentExperiments(JSONArray args, CallbackContext cac) {
-        cac.success(AdhocTracker.getCurrentExperiments().toString());
+        cac.success(AdhocTracker.getCurrentExperiments());
     }
 
     private static HashMap<String, String> toMap(JSONObject jsonobj) {
@@ -96,13 +97,13 @@ public class AHAdhocPlugin extends CordovaPlugin {
 
     private void trackWithAttribute(JSONArray args, CallbackContext cac) {
         String oneArg = args.optString(0);
-        String twoArg = args.optString(1);
+        int twoArg = args.optInt(1);
         JSONObject attribute = args.optJSONObject(2);
-        if (oneArg == null || oneArg.equals("") || twoArg == null || twoArg.equals("")) {
+        if (TextUtils.isEmpty(oneArg)) {
             cac.error("Expected one non-empty string argument.");
             return;
         }
-        AdhocTracker.track(oneArg, 1, toMap(attribute));
+        AdhocTracker.track(oneArg, twoArg, toMap(attribute));
         cac.success();
     }
 
@@ -110,7 +111,7 @@ public class AHAdhocPlugin extends CordovaPlugin {
 
         String oneArg = args.optString(0);
         String twoArg = args.optString(1);
-        if (oneArg == null || oneArg.equals("") || twoArg == null || twoArg.equals("")) {
+        if (TextUtils.isEmpty(oneArg) || TextUtils.isEmpty(twoArg)) {
             cac.error("error! flag name or default value is empty");
             return;
         }
@@ -122,7 +123,7 @@ public class AHAdhocPlugin extends CordovaPlugin {
         String oneArg = args.optString(0);
         String twoArg = args.optString(1);
         double timeOut = args.optDouble(2);
-        if (oneArg == null || oneArg.equals("") || twoArg == null || twoArg.equals("")) {
+        if (TextUtils.isEmpty(oneArg) || TextUtils.isEmpty(twoArg)) {
             cac.error("error! flag name or default value is empty");
             return;
         }
@@ -140,7 +141,7 @@ public class AHAdhocPlugin extends CordovaPlugin {
         String oneArg = args.optString(0);
         String twoArg = args.optString(1);
         double timeOut = args.optDouble(2);
-        if (oneArg == null || oneArg.equals("") || twoArg == null || twoArg.equals("")) {
+        if (TextUtils.isEmpty(oneArg) || TextUtils.isEmpty(twoArg)) {
             cac.error("error! flag name or default value is empty");
             return;
         }
@@ -153,5 +154,6 @@ public class AHAdhocPlugin extends CordovaPlugin {
     }
 
 }
+
 
 

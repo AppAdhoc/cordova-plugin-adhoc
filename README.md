@@ -30,6 +30,14 @@ config.appKey = @"ADHOC_XXX";
 
 ### Android SDK 初始化
 
+通过在工程 build.gradle 配置脚本中添加 maven 线上依赖，导入最新版本 SDK。在 Gradle 依赖中添加：
+
+```
+
+dependencies {    
+  implementation 'com.appadhoc:abtest-lite:5.1.1'
+}
+```
 在 Application 的 onCreate 方法中初始化原生 SDK
 
 ```
