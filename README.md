@@ -47,7 +47,7 @@ AdhocTracker.init(adhocConfig);
 
 可直接参考 [AdhocSDK.js](https://github.com/AppAdhoc/cordova-plugin-adhoc/blob/master/www/AdhocSDK.js) 文件。
 
-## 支持
+## 参考
 
 [iOS AdhocSDK 集成文档](http://help.appadhoc.com/zh/sdk/iosSDK.html)  
 
