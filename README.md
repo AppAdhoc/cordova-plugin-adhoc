@@ -49,5 +49,6 @@ AdhocTracker.init(adhocConfig);
 
 ## 支持
 
-[AdhocSDK iOS](http://help.appadhoc.com/zh/sdk/iosSDK.html)
-[AdhocSDK Android](http://help.appadhoc.com/zh/sdk/androidSDK.html#sdk)
+[iOS AdhocSDK 集成文档](http://help.appadhoc.com/zh/sdk/iosSDK.html)  
+
+[Android AdhocSDK 集成文档](http://help.appadhoc.com/zh/sdk/androidSDK.html)
