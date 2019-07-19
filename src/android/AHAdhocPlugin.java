@@ -145,7 +145,7 @@ public class AHAdhocPlugin extends CordovaPlugin {
             cac.error("error! flag name or default value is empty");
             return;
         }
-        AdhocTracker.fastGetFlag((int) (timeOut * 1000), new OnAdHocReceivedData() {
+        AdhocTracker.asyncGetFlag((int) (timeOut * 1000), new OnAdHocReceivedData() {
             @Override
             public void onReceivedData(ExperimentFlags experimentFlags) {
                 cac.success(experimentFlags.getFlag(oneArg, twoArg));
