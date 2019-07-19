@@ -27,7 +27,11 @@
             <feature name="AHAdhocPlugin"><param name="android-package" value="com.appadhoc.plugin.AHAdhocPlugin" />
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml">
+	<!-- AndroidManifest.xml -->
+            
+        <config-file target="AndroidManifest.xml" parent="/manifest" mode="merge">
+	    <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
         </config-file>
         <source-file src="src/android/AHAdhocPlugin.java" target-dir="src/com.appadhoc.plugin" />
     </platform>
