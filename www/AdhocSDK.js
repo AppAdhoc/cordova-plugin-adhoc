@@ -1,29 +1,34 @@
 var exec = require('cordova/exec');
 
-exports.getFlag = function(flagName, defaultValue, successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "AHAdhocPlugin", "getFlag", [flagName, defaultValue]);
+var AdhocSDK = {
+    getFlag: function(flagName, defaultValue, successCallback, errorCallback) {
+        exec(successCallback, errorCallback, "AHAdhocPlugin", "getFlag", [flagName, defaultValue]);
+    },
+    
+    getFlagFast: function(flagName, defaultValue, timeoutInterval, successCallback, errorCallback) {
+        exec(successCallback, errorCallback, "AHAdhocPlugin", "getFlagFast", [flagName, defaultValue, timeoutInterval]);
+    },
+    
+    asynchronousGetFlag: function(flagName, defaultValue, timeoutInterval, successCallback, errorCallback) {
+        exec(successCallback, errorCallback, "AHAdhocPlugin", "asynchronousGetFlag", [flagName, defaultValue, timeoutInterval]);
+    },
+    
+    track: function(statName, statValue, successCallback, errorCallback) {
+        exec(successCallback, errorCallback, "AHAdhocPlugin", "track", [statName, statValue]);
+    },
+    
+    trackWithAttribute: function(statName, statValue, attribute, successCallback, errorCallback) {
+        exec(successCallback, errorCallback, "AHAdhocPlugin", "trackWithAttribute", [statName, statValue, attribute]);
+    },
+    
+    getCurrentExperiments: function(successCallback, errorCallback) {
+        exec(successCallback, errorCallback, "AHAdhocPlugin", "getCurrentExperiments");
+    },
+    
+    getClientID: function(successCallback, errorCallback) {
+        exec(successCallback, errorCallback, "AHAdhocPlugin", "getClientID");
+    }
 };
 
-exports.getFlagFast = function(flagName, defaultValue, timeoutInterval, successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "AHAdhocPlugin", "getFlagFast", [flagName, defaultValue, timeoutInterval]);
-};
+module.exports = AdhocSDK
 
-exports.asynchronousGetFlag = function(flagName, defaultValue, timeoutInterval, successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "AHAdhocPlugin", "asynchronousGetFlag", [flagName, defaultValue, timeoutInterval]);
-};
-
-exports.track = function(statName, statValue, successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "AHAdhocPlugin", "track", [statName, statValue]);
-};
-
-exports.trackWithAttribute = function(statName, statValue, attribute, successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "AHAdhocPlugin", "trackWithAttribute", [statName, statValue, attribute]);
-};
-
-exports.getCurrentExperiments = function(successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "AHAdhocPlugin", "getCurrentExperiments");
-};
-
-exports.getClientID = function(successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "AHAdhocPlugin", "getClientID");
-};

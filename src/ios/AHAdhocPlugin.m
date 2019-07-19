@@ -12,7 +12,7 @@
 - (void)getFlag:(CDVInvokedUrlCommand*)command {
     CDVPluginResult* pluginResult = nil;
     NSString *flagName = [command.arguments objectAtIndex:0];
-    NSString *defaultValue = [command.arguments objectAtIndex:1];
+    NSString *defaultValue = [NSString stringWithFormat:@"%@",[command.arguments objectAtIndex:1]];
     
     if (flagName != nil && [flagName length] > 0) {
         NSString *flagValue = [AdhocSDK getFlag:flagName default:defaultValue];
@@ -26,7 +26,7 @@
 
 - (void)getFlagFast:(CDVInvokedUrlCommand*)command {
     NSString *flagName = [command.arguments objectAtIndex:0];
-    NSString *defaultValue = [command.arguments objectAtIndex:1];
+    NSString *defaultValue = [NSString stringWithFormat:@"%@",[command.arguments objectAtIndex:1]];
     NSTimeInterval timeInterval = [[command.arguments objectAtIndex:2] doubleValue];
     
     if (flagName != nil && [flagName length] > 0) {
@@ -47,7 +47,7 @@
 
 - (void)asynchronousGetFlag:(CDVInvokedUrlCommand*)command {
     NSString *flagName = [command.arguments objectAtIndex:0];
-    NSString *defaultValue = [command.arguments objectAtIndex:1];
+    NSString *defaultValue = [NSString stringWithFormat:@"%@",[command.arguments objectAtIndex:1]];
     NSTimeInterval timeInterval = [[command.arguments objectAtIndex:2] doubleValue];
     
     if (flagName != nil && [flagName length] > 0) {
