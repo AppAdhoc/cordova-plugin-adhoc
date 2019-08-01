@@ -35,7 +35,7 @@ config.appKey = @"ADHOC_XXX";
 ```
 
 dependencies {    
-  implementation 'com.appadhoc:abtest-lite:5.1.1'
+  implementation 'com.appadhoc:abtest-lite:5.1.2'
 }
 ```
 在 Application 的 onCreate 方法中初始化原生 SDK
